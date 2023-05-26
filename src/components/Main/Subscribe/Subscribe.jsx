@@ -39,6 +39,7 @@ const Subscribe = () => {
           svg="letter"
           placeholder="Your email here"
           isArrow={windowWidth < 430}
+          isEmail={true}
         />
         <img
           className="subscribe__img subscribe__img-1"

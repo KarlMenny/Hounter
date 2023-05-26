@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './OneField.scss';
+import emailValidator from 'email-validator';
 
 function getIconSvg(svg) {
   return (
@@ -54,7 +55,9 @@ const OneField = ({
   placeholder = '',
   isArrow = false,
   className,
+  isEmail = false,
 }) => {
+  const [formData, setFormData] = useState({ value: '', error: '' });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -75,15 +78,54 @@ const OneField = ({
     ph = placeholder.slice(0, 23);
   }
 
+  function handleSubmit(e, formData) {
+    e.preventDefault();
+    if (!formData.value) {
+      setFormData((state) => ({
+        ...state,
+        error: 'The field must not be empty!',
+      }));
+      return;
+    }
+
+    if (isEmail && !emailValidator.validate(formData.value)) {
+      setFormData((state) => ({
+        ...state,
+        error: 'Enter a valid email!',
+      }));
+      return;
+    }
+
+    alert('Was sent: ' + formData.value);
+  }
+
   return (
-    <div className={'one-field' + (className ? ` ${className}` : '')}>
+    <form className={'one-field' + (className ? ` ${className}` : '')}>
       {getIconSvg(svg)}
-      <input className="one-field__field" placeholder={ph} />
-      <div className="one-field__btn">
+      <input
+        className="one-field__field"
+        placeholder={ph}
+        type={isEmail ? 'email' : 'text'}
+        value={formData.value}
+        onChange={(e) => {
+          setFormData((state) => ({
+            ...state,
+            value: e.target.value,
+            error: '',
+          }));
+        }}
+      />
+      {formData.error && (
+        <span className="one-field__error">{formData.error}</span>
+      )}
+      <button
+        className="one-field__btn"
+        onClick={(e) => handleSubmit(e, formData)}
+      >
         <span className="one-field__btn-text">{textBtn}</span>
         {isArrow ? getIconSvg('arrow') : null}
-      </div>
-    </div>
+      </button>
+    </form>
   );
 };
 

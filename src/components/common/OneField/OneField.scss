@@ -1,4 +1,6 @@
 .one-field {
+  position: relative;
+
   max-width: 496px;
   width: 100%;
   display: flex;
@@ -29,6 +31,14 @@
       max-width: 177px;
       padding: 0 10px 0 10px;
     }
+  }
+
+  &__error {
+    font-size: 13px;
+    color: #ef4444;
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
   }
 
   &__btn {
