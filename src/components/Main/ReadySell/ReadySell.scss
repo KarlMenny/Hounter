@@ -1,0 +1,38 @@
+@import '../../../styles/mixin.scss';
+
+.ready-sell {
+  position: relative;
+  padding-top: 120px;
+
+  @media (max-width: 370px) {
+    padding-top: 60px;
+  }
+
+  &__shape {
+    @include shape;
+
+    &--order_first {
+      @include shape-order(
+        $top: 30%,
+        $right: 0,
+        $background: rgba(255, 152, 130, 1),
+        $blur: 300px,
+        $scatter: 150px,
+        $opacity: 0.5,
+        $z-index: -1
+      );
+    }
+
+    &--order_second {
+      @include shape-order(
+        $bottom: 40%,
+        $right: 0,
+        $background: rgba(255, 250, 130, 1),
+        $blur: 300px,
+        $scatter: 150px,
+        $opacity: 0.5,
+        $z-index: -2
+      );
+    }
+  }
+}

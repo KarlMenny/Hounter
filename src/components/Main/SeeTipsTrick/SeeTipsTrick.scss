@@ -1,0 +1,96 @@
+@import '../../../styles/mixin.scss';
+
+.see-tips-trick {
+  position: relative;
+  padding-top: 120px;
+
+  &__shape {
+    @include shape;
+
+    &--order_first {
+      @include shape-order(
+        $top: 30%,
+        $left: 0,
+        $background: rgba(130, 255, 232, 1),
+        $blur: 300px,
+        $scatter: 150px,
+        $opacity: 0.5,
+        $z-index: -1
+      );
+    }
+
+    &--order_second {
+      @include shape-order(
+        $bottom: 40%,
+        $left: 0,
+        $background: rgba(200, 255, 130, 1),
+        $blur: 300px,
+        $scatter: 150px,
+        $opacity: 0.5,
+        $z-index: -2
+      );
+    }
+  }
+
+  &__header {
+    margin-bottom: 42px;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+  }
+
+  &__posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 44px 68px;
+    grid-template-areas:
+      'post-2 post-1'
+      'post-3 post-1'
+      'post-4 post-1';
+
+    @media (max-width: 975px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto;
+
+      gap: 40px 0;
+
+      grid-template-areas:
+        'post-1'
+        'post-2'
+        'post-3'
+        'post-4';
+    }
+
+    @media (max-width: 580px) {
+      gap: 50px 0;
+    }
+  }
+
+  .see-tips-trick__post-1 {
+    grid-area: post-1;
+  }
+
+  .see-tips-trick__post-1 .post {
+    flex-direction: column;
+
+    & .post__img {
+      max-width: none;
+      margin-bottom: 24px;
+    }
+  }
+
+  .see-tips-trick__post-2 {
+    grid-area: post-2;
+  }
+
+  .see-tips-trick__post-3 {
+    grid-area: post-3;
+  }
+
+  .see-tips-trick__post-4 {
+    grid-area: post-4;
+  }
+}

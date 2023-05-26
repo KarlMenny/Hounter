@@ -1,0 +1,42 @@
+.featured-house-slide {
+  max-width: 340px;
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  &__img {
+    border-radius: 24px;
+  }
+
+  &__label {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #0e1735;
+
+    @media (max-width: 1075px) {
+      text-align: center;
+    }
+  }
+
+  &__price {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #3c4563;
+
+    @media (max-width: 1075px) {
+      text-align: center;
+    }
+  }
+}

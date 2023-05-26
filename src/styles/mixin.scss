@@ -1,0 +1,39 @@
+@mixin shape {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+@mixin shape-order(
+  $top: false,
+  $left: false,
+  $right: false,
+  $bottom: false,
+  $background: transparent,
+  $blur: 0,
+  $scatter: 0,
+  $opacity: false,
+  $z-index: false
+) {
+  @if $top {
+    top: $top;
+  }
+  @if $left {
+    left: $left;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  background: $background;
+  box-shadow: 0 0 $blur $scatter $background;
+  @if $opacity {
+    opacity: $opacity;
+  }
+  @if $z-index {
+    z-index: $z-index;
+  }
+}

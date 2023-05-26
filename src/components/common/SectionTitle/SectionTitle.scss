@@ -1,0 +1,43 @@
+.section-title {
+  padding-left: 40px;
+
+  &__subtitle {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #f59e0b;
+    margin-bottom: 12px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: -40px;
+      width: 32px;
+      height: 1px;
+      background-color: #f59e0b;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    text-transform: capitalize;
+    color: #1b1c57;
+  }
+
+  &--center {
+    text-align: center;
+    padding: 0;
+    .section-title__subtitle {
+      &::before {
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

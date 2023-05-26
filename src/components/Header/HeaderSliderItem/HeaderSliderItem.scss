@@ -1,0 +1,44 @@
+.header-slider-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 11px 48px rgba(51, 51, 51, 0.06);
+  border-radius: 32px;
+  cursor: ew-resize;
+
+  &__avatars {
+    position: relative;
+    margin-right: 16px;
+
+    & img {
+      position: relative;
+      width: 56px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      filter: drop-shadow(0px 9px 32px rgba(89, 92, 219, 0.1));
+    }
+
+    & img:nth-child(2) {
+      left: -28px;
+    }
+
+    & img:nth-child(3) {
+      position: absolute;
+      left: 55px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 2px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #1b1c57;
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 20px;
+    color: #68799f;
+  }
+}

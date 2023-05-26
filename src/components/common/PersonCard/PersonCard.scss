@@ -1,0 +1,53 @@
+.person-card {
+  display: flex;
+  align-items: center;
+  &__avatar {
+    border-radius: 50%;
+
+    &--size_32 {
+      width: 32px;
+      margin-right: 16px;
+    }
+
+    &--size_40 {
+      width: 40px;
+      margin-right: 16px;
+    }
+
+    &--size_56 {
+      width: 56px;
+      margin-right: 24px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #0e1735;
+
+    &--size_14 {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &--size_18 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    color: #888b97;
+
+    &--size_14 {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &--size_16 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

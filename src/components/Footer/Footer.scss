@@ -1,0 +1,133 @@
+@import '../../styles/mixin.scss';
+
+.footer {
+  position: relative;
+  padding-top: 120px;
+
+  &__shape {
+    @include shape;
+
+    &--order_first {
+      @include shape-order(
+        $top: 68%,
+        $right: 0,
+        $background: rgba(130, 187, 255, 1),
+        $blur: 300px,
+        $scatter: 200px,
+        $opacity: 0.5,
+        $z-index: -1
+      );
+    }
+
+    &--order_second {
+      @include shape-order(
+        $bottom: 0,
+        $right: 20%,
+        $background: rgba(185, 255, 130, 1),
+        $blur: 300px,
+        $scatter: 150px,
+        $opacity: 0.5,
+        $z-index: -2
+      );
+    }
+  }
+
+  &__row {
+    display: flex;
+
+    @media (max-width: 770px) {
+      flex-direction: column;
+
+      & .footer__col:last-child {
+        margin-bottom: 65px;
+      }
+    }
+  }
+
+  &__col {
+    flex-grow: 1;
+
+    &--size {
+      width: 41.6%;
+
+      @media (max-width: 770px) {
+        order: 1;
+        width: auto;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1075px) {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    max-width: 330px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #626687;
+    opacity: 0.75;
+  }
+
+  &__social {
+    display: flex;
+    max-width: 130px;
+    justify-content: space-between;
+    padding-left: 9px;
+  }
+
+  &__social-link {
+    display: block;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
+
+  &__nav {
+    width: 264px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__list-title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: #0e1735;
+  }
+
+  &__list-item {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: #888b97;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list-link {
+    text-decoration: none;
+    color: #888b97;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

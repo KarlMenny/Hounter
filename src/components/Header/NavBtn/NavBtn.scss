@@ -1,0 +1,66 @@
+.nav-btn {
+  position: relative;
+
+  &__btn {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 32px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #f0f3fd;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    & svg {
+      margin-left: 15px;
+      transition: all 0.3s;
+    }
+
+    &--active svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px 0;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08), 0 0 10px rgba(0, 0, 0, 0.32);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__menu-link {
+    display: block;
+    padding: 5px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #1b1c57;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #d1fae5;
+    }
+  }
+}
